@@ -1,0 +1,1 @@
+export const FAVORITEFILTER = "FAVORITE_FILTER";
