@@ -14,7 +14,7 @@ export function* getBeers({ payload }) {
 
     yield put(getBeerRequestSucceed(data));
   } catch (error) {
-    // yield exceptionHandlerService(error, apiCollections.exitNoteLink);
+    console.log(error);
   }
 }
 
@@ -23,13 +23,17 @@ function* getSingleBeer(action) {
     const { id } = action.payload;
     const { data } = yield call(request, "GET", `https://api.punkapi.com/v2/beers/${id}`, {});
     yield put(getOneBeerRequestSucceed(data));
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 }
 function* getRandomBeer() {
   try {
     const { data } = yield call(request, "GET", `https://api.punkapi.com/v2/beers/random`, {});
     yield put(getRandomBeerRequestSucceed(data));
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 export function* beersSagas() {
