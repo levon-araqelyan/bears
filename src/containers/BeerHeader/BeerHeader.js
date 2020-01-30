@@ -94,9 +94,11 @@ class Header extends React.Component {
           <input onChange={resultsFlag ? this.handleKeyDown : this.handleKeyDownFavorite} value={value} />
         </div>
         <div className={style.page}>
-          <a href="home" className={style.href}>
-            HOME
-          </a>
+          <button className={style.link}>
+            <a href="home" className={style.href}>
+              HOME
+            </a>
+          </button>
           <button onClick={this.favorite} className={style.link} type="button">
             <span>FAVORITE</span>
           </button>
